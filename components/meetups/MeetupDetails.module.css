@@ -1,0 +1,23 @@
+.container{
+    /* border: 2px solid green; */
+    text-align: center;
+}
+.container > img {
+    width:100%;
+    border-radius: 5px;
+}
+.title{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.address{
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: bold;
+}
+.description{
+    font-size: 14px;
+    font-family: monospace;
+}
