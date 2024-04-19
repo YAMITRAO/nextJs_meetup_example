@@ -35,12 +35,13 @@ export async function getStaticPaths(){
 
 export async function getStaticProps(context){
     const meetupId = context.params.meetupId;
-    console.log(meetupId);
+    // console.log(meetupId);
+    const myId = new ObjectId(meetupId);
 
     const client = await MongoClient.connect("mongodb+srv://goals2k24:YADAV12236@cluster0.tl7veys.mongodb.net/meetups?retryWrites=true&w=majority&appName=Cluster0");
        const db = client.db();
        const meetupsCollections = db.collection('meetups');
-       const selectedMeetup = await meetupsCollections.findOne({_id: ObjectId(meetupId)});
+       const selectedMeetup = await meetupsCollections.findOne({_id: myId});
        client.close();
     return {
         props:{
