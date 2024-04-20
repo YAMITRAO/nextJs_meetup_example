@@ -1,5 +1,6 @@
 import MeetupList from "@/components/meetups/MeetupList"
 import { MongoClient } from "mongodb";
+import Head from "next/head";
 
 // import { getStaticProps } from "next/dist/build/templates/pages";
 
@@ -26,7 +27,14 @@ const index = (props) => {
     
    
   return (
+    <>
+    <Head>
+      <title>Meetup Page</title>
+      <meta name="description" content="This is our meetup page. You can find all meets here" />
+    </Head>
     <MeetupList meetups={props.myData}/>
+    </>
+    
   )
 }
 
